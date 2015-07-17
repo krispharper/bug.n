@@ -1,0 +1,1 @@
+start bugn.exe Config
