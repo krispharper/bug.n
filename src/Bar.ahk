@@ -458,7 +458,8 @@ Bar_updateTitle() {
   If Window_#%aWndId%_isFloating
     aWndTitle := "~ " aWndTitle
   If (Manager_monitorCount > 1)
-    aWndTitle := "[" Manager_aMonitor "] " aWndTitle
+    ;aWndTitle := "[" Manager_aMonitor "] " aWndTitle
+    aWndTitle := aWndTitle
   title := " " . aWndTitle . " "
 
   If (Bar_getTextWidth(title) > Bar_#%Manager_aMonitor%_titleWidth) {
