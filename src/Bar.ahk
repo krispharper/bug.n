@@ -68,7 +68,7 @@ Bar_init(m) {
   If Config_readinTime {
     color .= ";5"
     id    .= ";time"
-    text  .= "; ??:?? "
+    text  .= "; ??:??:?? "
   }
   If Config_readinDate {
     color .= ";6"
@@ -444,7 +444,7 @@ Bar_updateStatus() {
       ;GuiControl, , Bar_#%m%_date, % " " A_DDD ", " A_DD ". " A_MMM ". " A_YYYY " "
       GuiControl, , Bar_#%m%_date, % " " A_YYYY "-" A_MM "-" A_DD " "
     If Config_readinTime
-      GuiControl, , Bar_#%m%_time, % " " A_Hour ":" A_Min " "
+      GuiControl, , Bar_#%m%_time, % " " A_Hour ":" A_Min ":" A_Sec " "
   }
 }
 
