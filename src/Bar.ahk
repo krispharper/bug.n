@@ -73,12 +73,12 @@ Bar_init(m) {
   If Config_readinDate {
     color .= ";6"
     id    .= ";date"
-    text  .= "; ??, ??. ???. ???? "
+    text  .= "; ????-??-?? "
   }
   If Config_readinVolume {
     color .= ";9"
     id    .= ";volume"
-    text  .= "; VOL: ???% "
+    text  .= "; vol ???% "
   }
   anyText := Config_readinAny()
   If anyText {
@@ -438,10 +438,11 @@ Bar_updateStatus() {
         GuiControl, +c%Config_fontColor_#2_#9%, Bar_#%m%_volume
       }
       GuiControl, , Bar_#%m%_volume_highlighted, %vol%
-      GuiControl, , Bar_#%m%_volume, % " VOL: " SubStr("  " vol, -2) "% "
+      GuiControl, , Bar_#%m%_volume, % " vol " SubStr("  " vol, -2) "% "
     }
     If Config_readinDate
-      GuiControl, , Bar_#%m%_date, % " " A_DDD ", " A_DD ". " A_MMM ". " A_YYYY " "
+      ;GuiControl, , Bar_#%m%_date, % " " A_DDD ", " A_DD ". " A_MMM ". " A_YYYY " "
+      GuiControl, , Bar_#%m%_date, % " " A_YYYY "-" A_MM "-" A_DD " "
     If Config_readinTime
       GuiControl, , Bar_#%m%_time, % " " A_Hour ":" A_Min " "
   }
